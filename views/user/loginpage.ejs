@@ -1,0 +1,505 @@
+<%- include ../partials/homeheader %>
+<!-- <style>
+  
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+	font-weight: bold;
+	margin: 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+span {
+	font-size: 12px;
+}
+
+a {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #005a9e;
+	background-color:  #005a9e;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+form {
+	background-color: #FFFFFF !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	flex-direction: column !important;
+	padding: 0 50px !important;
+	height: 100% !important;
+	text-align: center !important;
+}
+
+input {
+	background-color: #eee !important;
+	border: none ;
+	padding: 12px 15px !important;
+	margin: 8px 0 !important;
+	width: 100% !important;
+  min-height: 0 !important;
+}
+.awrap{
+  position: relative;
+  height: 100vh;
+}
+.acontainer {
+	background-color: #fff;
+	border-radius: 10px;
+  
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-45%);
+	overflow: hidden;
+ 
+	width: 768px;
+	max-width: 100%;
+	min-height: 590px;
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.acontainer.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.acontainer.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.acontainer.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: #005a9e;
+	/* background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C); */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.acontainer.right-panel-active .overlay {
+  	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.acontainer.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.acontainer.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.social-container {
+	margin: 20px 0;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+
+
+header .header_inner .left-side .triger{
+	color:#02466B ;
+}
+@media (max-width:850px){
+  
+
+form {
+  padding: 0 20px !important;
+}
+.awrap{
+  height: 950px;
+}
+.acontainer {
+  width: 320px;
+  min-height: 800px;
+  transform: translate(-50%,-50%);
+position: relative;
+}
+  .sign-in-container{
+    top: 40%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    z-index: 2;
+  
+  }
+  .sign-up-container {
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    z-index: 1;
+    transform: translateX(-100%);
+}
+  
+.acontainer.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+
+
+.acontainer.right-panel-active .sign-up-container {
+	transform: translateX(0%);
+	opacity: 1;
+	z-index: 5;
+	animation: none;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.overlay-container {
+	position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 100%;
+    height: 40%;
+    transform: translate(-50%,0%);
+    overflow: hidden;
+    transition:  0.6s ease-in-out;
+    z-index: 100;
+}
+
+.acontainer.right-panel-active .overlay-container{
+  transform: translate(-50%,0%);
+  transition: all 0.6s ease;
+  height: 30%;
+}
+
+.overlay {
+	background: #005a9e;
+	/* background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C); */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: all 0.6s ease;
+}
+
+.acontainer.right-panel-active .overlay {
+  	transform: translateX(0%);
+	  transition: all 0.6s ease;
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: all 0.6s ease;
+}
+
+.acontainer.right-panel-active .overlay-panel {
+	  transition: all 0.6s ease;
+}
+
+.acontainer.right-panel-active .overlay-left {
+	transform: translateX(100%);
+	
+}
+
+
+
+.acontainer.right-panel-active .overlay-right {
+	transform: translateX(90%);
+}
+
+}
+</style> -->
+<head>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+      <!-- <div class="fgrid">
+    <div class="section-header">
+      <h1>Login</h1>
+      <hr class="hr--small">
+    </div>
+    <form action="/user/signin" method="POST" class="lform login" id="form1">
+
+      <div class="form__field">
+        <label for="email" style="margin-bottom: 0px;"><svg class="icon" style="margin-top: auto;font-size:20px">
+            <use xlink:href="#icon-email"></use>
+          </svg><span class="hidden">Eamil</span></label>
+        <input id="email" type="text" name="email" class="form__input" placeholder="Email" required />
+      </div>
+
+      <div class="form__field">
+        <label for="password" style="margin-bottom: 0px;"><svg class="icon" style="margin-top:auto;font-size:20px">
+            <use xlink:href="#icon-lock"></use>
+          </svg><span class="hidden">Password</span></label>
+        <input id="password" type="password" name="password" class="form__input" placeholder="Password" required />
+      </div>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <div class="form__field">
+        <input type="submit" value="Sign In">
+      </div>
+
+    </form>
+
+    <p class="text--center">Not a member? <a href="/user/signup">Sign up now</a> <svg class="icon">
+        <use xlink:href="#icon-arrow-right"></use>
+      </svg></p>
+
+  </div> -->
+
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" class="icons">
+    <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
+      <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" />
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 1792 1792">
+      <path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z" />
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 1792 1792">
+      <path d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z" />
+    </symbol>
+    <symbol id="icon-email" viewBox="0 -54 500 500">
+   
+      <path d="M0,50a40,49 0 01 40-49h420a40,49 0 01 40,49c0,22-28,55-46,70l-171,118.5c-27,15.5-39,15.5-66,0l-171-118.5c-28-15-46-48-46-70z" />
+
+      <path d="M0,127.5v221.5a45,45 0 00 45,45h415a45,45 0 00 40-45v-221.5c-8,8.5-16,15.5-26,22.5l-162,113c-47,31-77,31-124,0l-162-113c-10-6-18-14-26-22.5z" />
+
+</symbol>
+  </svg> -->
+<div class="awrap">
+	<% if(errorMsg !=null && errorMsg.length>0) {%>
+		<div id="flash-msg" class="alert alert-danger" style="position:absolute;top: 25%;left: 25%;transform: translate(-50%,-50%);width: fit-content;z-index: 1;"><%=errorMsg %></div>
+		<%}%>
+  <div class="acontainer" id="container">
+    <div class="form-container sign-up-container">
+      <form action="/user/authform" method="POST">
+        <h1 >Create Account</h1>
+        <div class="social-container">
+      
+          <a href="/user/auth/google" class="social">SignUp with Google</a>
+         
+        </div>
+        <span>or use your email for registration</span>
+        <input type="text" placeholder="Name" name="name" required />
+        <input type="email" placeholder="Email" name="email" required/>
+		<input type="tel" placeholder="Phone Number" name="phone" maxlength="10" pattern="\d{10}" title="Please enter valid Phone number" required/>
+        <input type="password" placeholder="Password" name="password" required />
+		<input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+		<input type="password" placeholder="Verify Password" name="password2" required/>
+        <button >Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="/user/signin" method="POST">
+        <h1>Sign in</h1>
+        <div class="social-container">
+          <a href="/user/auth/google" class="social">SignIn with Google</a>
+    
+        </div>
+        <span>or use your account</span>
+        <input type="text" placeholder="Email or Phone number"  name="email" required/>
+        <input type="password" placeholder="Password"  name="password" required />
+		<input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <a href="/user/forgotpassword">Forgot your password?</a>
+        <button >Sign In</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1 style="color: #f6f5f7;">Welcome Back!</h1>
+          <p> Keep connected with us </p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1 style="color: #f6f5f7;">Hello, Friend!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <button class="ghost" id="signUp">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <%- include ../partials/homefooter %>
+  <script>
+
+      const container = document.getElementById('container');
+      
+      const status="<%=pageName%>";
+      console.log(status)
+      if(status=="SignIn"){
+        container.classList.remove("right-panel-active");
+      }else if(status=="SignUp"){
+        container.classList.add("right-panel-active");
+      }
+// 	document.getElementById('signUp').addEventListener('click',()=>{
+// 		console.log(document.getElementById('flash-msg'))
+// 		if(document.getElementById('flash-msg')!=null)
+// document.getElementById('flash-msg').style.display="none"
+// 	})
+// 	document.getElementById('signIn').addEventListener('click',()=>{
+// 	  console.log(document.getElementById('flash-msg'))
+// 		if(document.getElementById('flash-msg')!=null)
+// document.getElementById('flash-msg').style.display="block"
+// 	})
+
+
+
+</script>

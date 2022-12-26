@@ -1,0 +1,208 @@
+<%- include ../partials/homeheader %>
+<style>
+     header .header_inner .left-side .triger{
+	color:#02466B ;
+}      
+a{
+    color:#02466B ;
+}
+</style>
+<div id="content">
+   
+    <div class="centered-container cc-content-blog">
+        <div class="content-blog">
+            <div class="main-content main-content--blog">
+                <div class="light-header">
+                <h1 class="light-header__title" style="padding-bottom: 0;">Courses</h1>
+                            <div class="blog-description cssc-content">
+                    <div class="wrap-text"><p>Sign up for our stand-alone software courses to strengthen your technological prowess and dive head-long into challenges fearlessly.</p>
+    </div>
+                </div>
+                            </div>
+                <div>
+         
+           
+                    <div class="wpulivesearch-filters"  style="margin-bottom: 0;display: block !important;" >
+                                       
+                        <a class="view-all" href="#" id="view-alll" style="display: none;">All</a>
+                        <div class="wpulivesearch-filter__wrapper" data-key="category"  data-multiple="0">
+                            <div class="wpulivesearch-filter__item" style="display: block  !important;">
+                                <div class="wpulivesearch-filter wpulivesearch-filter--radio" data-multiple="0" data-label="Category" data-key="category" style="display: block  !important;">
+                                  <div class="values" style="display: block  !important;">
+
+                                    <div data-hasitems="true" class="value foggyback" id="top8" ><input id="filter-category22" type="radio" name="category" value="22">
+                                        <label for="filter-category22">All</label></div>
+
+                                    <%for(let i=0;i<category.length;i++){%>
+                                    <div data-hasitems="true" class="value " id="top<%=i%>"><input id="filter-category<%=i%>" type="radio" name="category" value="<%=i%>">
+                                        <label for="filter-category<%=i%>"><%=category[i].title%></label></div>
+                                      <%}%>
+                                     
+                                     
+                                
+                                  
+                            
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                        
+
+     
+          
+          
+          <div aria-live="polite" id="wpulivesearch_results">
+             <section data-design="clear" class="centered-container section cc-block--posts coursesec" id="courseid8">
+                <div class="block--posts section">
+                    <div class="loops__header">
+                        <h2 class="form-title will-scrollanim will-scrollanim-children" data-usechildren="1" data-delay="800"><div data-vawjs-lines="1" data-vawjs-anim="slideup" data-hasscrollanim="1" data-active="1" data-vawjs-ready="1"><span class="vawjs-word-wrapper"><span class="vawjs-word" style="animation-delay: -0.1s;">Hone your </span></span><span class="vawjs-word-wrapper"><span class="vawjs-word" style="animation-delay: -0.1s;"> software skills</span></span><span class="vawjs-word-wrapper"><span class="vawjs-word" style="animation-delay: -0.1s;"> time and again</span></span></div></h2>
+                        
+                            </div>
+        <%for(let i=0;i<category.length;i++){%>
+             <div style="margin-bottom: 20px;">
+             <h2 class="text-xl font-semibold"> <%=category[i].title%> </h2>  
+             </div>     
+                    <ul class="loops__list loops__list--slide will-scrollanim will-scrollanim-children" data-usechildren="1" data-delay="200">
+              <%for(let j=0;j<course.length;j++){%>
+                  <%if(course[j].category.title==category[i].title){%>       
+                    <li data-hasscrollanim="1" data-active="1"><div class="loop" data-post-type="products">
+                        <a href="/course/<%=course[j]._id%>">
+                        <div class="card uk-transition-toggle">
+                            <div class="card-media h-40">
+                                <div class="card-media-overly"></div>
+                                <img src="<%=course[j].course_img%>" alt="" class="" style="background-color: #02466b;">
+                              
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="font-bold text-lg line-clamp-2"><%=course[j].title%> </div>
+                                <div class="text-sm font-medium" >· <%=course[j].tutor_name%> </div>
+                                
+                                <div class="pt-1 flex items-center justify-between">
+                                    <div class="flex space-x-2 items-center text-sm ">
+                                        <div>· <%=course[j].course_data.total_hours%> hours  </div>
+                                        <div> · </div>
+                                        <div><%=course[j].course_data.no_of_videos%> lectures </div>
+                                    </div>
+                                    <div class="text-lg font-semibold"> ₹<%=course[j].price%> </div>
+                                </div>
+                        <div  class="pt-1" ><div style="display:flex;flex-direction: row;justify-content: space-between;color: orangered;" >Explore this Course<img src="/assets/images/avatars/red-arrow.svg" alt="" style="margin-top: 2px;"></div></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                </li>
+                <%}%>
+                <%}%>
+              
+                  
+                <!-- <li data-hasscrollanim="1" data-active="1"><div class="loop" data-post-type="products">
+                    <div class="loop__container" style="background-image: url(https://www.algoan.com/wp-content/uploads/2021/03/push_credit-insight.jpg);">
+                    <div class="loop__inner">
+                        <div class="loop-surtitle">
+                            Credit Insights        </div>
+                        <h3 class="loop-title">
+                            <a href="https://www.algoan.com/products/credit-insights/">Transform raw transaction data into meaningful insights for your lending decisions</a>
+                        </h3>
+                    </div>
+                    </div>
+                </div>
+                </li>    
+                <li data-hasscrollanim="1" data-active="1"><div class="loop" data-post-type="products">
+                    <div class="loop__container" style="background-image: url(https://www.algoan.com/wp-content/uploads/2021/03/push_credit-insight.jpg);">
+                    <div class="loop__inner">
+                        <div class="loop-surtitle">
+                            Credit Insights        </div>
+                        <h3 class="loop-title">
+                            <a href="https://www.algoan.com/products/credit-insights/">Transform raw transaction data into meaningful insights for your lending decisions</a>
+                        </h3>
+                    </div>
+                    </div>
+                </div>
+                </li>     -->
+              </ul>
+              <%}%>
+                </div>
+                </section>
+                <%for(let i=0;i<category.length;i++){%>
+                    <section data-design="clear" class="centered-container section cc-block--posts d-none coursesec" id="courseid<%=i%>">
+                        <div class="block--posts section">
+                          
+                
+                     <div style="margin-bottom: 20px;">
+                     <h2 class="text-xl font-semibold"> <%=category[i].title%> </h2>  
+                     </div>     
+                            <ul class="loops__list loops__list--slide will-scrollanim will-scrollanim-children" data-usechildren="1" data-delay="200">
+                      <%for(let j=0;j<course.length;j++){%>
+                          <%if(course[j].category.title==category[i].title){%>       
+                            <li data-hasscrollanim="1" data-active="1"><div class="loop" data-post-type="products">
+                                <a href="/course/<%=course[j]._id%>">
+                                <div class="card uk-transition-toggle">
+                                    <div class="card-media h-40">
+                                        <div class="card-media-overly"></div>
+                                        <img src="<%=course[j].course_img%>" alt="" class="" style="background-color: #02466b;">
+                                      
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <div class="font-bold text-lg line-clamp-2"><%=course[j].course_name%> </div>
+                                        <div class="text-sm font-medium" >· <%=course[j].tutor_name%> </div>
+                                        
+                                        <div class="pt-1 flex items-center justify-between">
+                                            <div class="flex space-x-2 items-center text-sm ">
+                                                <div>· <%=course[j].course_data.total_hours%> hours  </div>
+                                                <div> · </div>
+                                                <div><%=course[j].course_data.no_of_videos%> lectures </div>
+                                            </div>
+                                            <div class="text-lg font-semibold"> ₹<%=course[j].price%> </div>
+                                        </div>
+                                <div  class="pt-1" ><div style="display:flex;flex-direction: row;justify-content: space-between;color: orangered;" >Explore this Course<img src="/assets/images/avatars/red-arrow.svg" alt="" style="margin-top: 2px;"></div></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        </li>
+                        <%}%>
+                        <%}%>
+                      
+                          
+                     </ul>
+                    
+                        </div>
+                        </section>
+                    <%}%>
+
+      </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+    var btns=document.getElementsByClassName('value');
+    var secs=document.getElementsByClassName('coursesec');
+      for(item of btns){
+      
+      item.addEventListener("click", function(event){
+      
+          console.log(event.target.parentElement.id.length)
+          const id='courseid'+event.target.parentElement.id.substring(event.target.parentElement.id.length-1);
+          for(item of btns){
+           item.classList.remove('foggyback');
+          }
+          for(sec of secs){
+           sec.classList.add('d-none');
+          }
+          document.getElementById(id).classList.remove('d-none');
+          event.target.parentElement.classList.add('foggyback');
+        
+            })
+                
+  }
+
+ 
+</script>
+ <%- include ../partials/homefooter %>
